@@ -1,5 +1,10 @@
 # Changelog
 
+## [V1.0.2]
+
+- Author: OpenBridge Official
+- Changes: Replace the body structure diagram with the English-labeled figure
+
 ## [V1.0.1]
 
 - Author: OpenBridge Official

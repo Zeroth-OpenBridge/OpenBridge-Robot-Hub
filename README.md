@@ -10,7 +10,7 @@ OpenBridge is the open-source ecosystem. Zeroth Bridge is the robot.
 | Skill development | [Skill Hub](https://github.com/Zeroth-OpenBridge/OpenBridge-Skill-Hub) |
 | Simulation and verification | [Simulation Hub](https://github.com/Zeroth-OpenBridge/OpenBridge-Simulation-Hub) |
 
-Document version: V1.0.1  
+Document version: V1.0.2  
 Applicable model: 小桥 / Zeroth Bridge  
 Units: SI (cm, kg, N·m)  
 License: [GNU General Public License v3.0](LICENSE) — 元点机器人 / OpenBridge
@@ -87,7 +87,14 @@ Zeroth Bridge is a compact humanoid with a slender body. Key dimensions and mass
   <img src="images/4.1-structure.png" alt="Zeroth Bridge body structure" width="640" />
 </p>
 
-The cutaway shows actuator families by color (arm motors in green, high-torque hip/knee motors in copper, thigh/ankle motors in yellow), plus the chest electronics pack (controller board, battery block) and a neck interface layer. Callouts on the source render are mostly unlabeled; one lower-leg motor is marked **25N** (25 N·m).
+English callouts on the cutaway:
+
+- **10 N·m motor** (green) — shoulders and arms
+- **SOC** — upper chest, below the neck
+- **Battery** — blue pack in the torso
+- **MCU** — chest controller board
+- **55 N·m motor** (red) — hips and knees
+- **25 N·m motor** (yellow) — thighs and ankles
 
 **Joint range of motion and motor parameters**
 
