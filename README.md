@@ -102,9 +102,31 @@ English callouts on the cutaway:
   <img src="images/4.1-joints.png" alt="Joint range of motion and motor parameters" width="480" />
 </p>
 
-Orange tags **1–21** index joints: 1–4 left arm, 5–10 left leg, 11–14 right arm, 15–20 right leg, 21 waist. Peak torques for each region are in the [DoF table](#degrees-of-freedom). The Feishu source also embeds a spreadsheet next to this figure; that sheet is not exported here.
+Orange tags **1–21** index joints: **1–4 right arm, 5–10 right leg, 11–14 left arm, 15–20 left leg, 21 waist.** Peak torques for each region are in the [DoF table](#degrees-of-freedom).
 
-Coming soon. Expected update in September.
+| # | Joint | Lower (deg) | Lower (rad) | Upper (deg) | Upper (rad) | Torque (N·m) | Speed (rpm) | Speed (rad/s) |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1 | right_shoulder_pitch | -210 | -3.6652 | 90 | 1.5708 | 10 | 235 | 24.6091 |
+| 2 | right_shoulder_roll | -180 | -3.1416 | 10 | 0.1745 | 10 | 235 | 24.6091 |
+| 3 | right_shoulder_yaw | -90 | -1.5708 | 90 | 1.5708 | 10 | 235 | 24.6091 |
+| 4 | right_elbow_pitch | -45 | -0.7854 | 225 | 3.927 | 10 | 235 | 24.6091 |
+| 5 | right_hip_pitch | -160 | -2.7925 | 160 | 2.7925 | 55 | 180 | 18.8496 |
+| 6 | right_hip_roll | -80 | -1.3963 | 90 | 1.5708 | 25 | 170 | 17.8024 |
+| 7 | right_hip_yaw | -160 | -2.7925 | 160 | 2.7925 | 25 | 170 | 17.8024 |
+| 8 | right_knee_pitch | -100 | -1.7453 | 120 | 2.0944 | 55 | 180 | 18.8496 |
+| 9 | right_ankle_pitch | -40 | -0.6981 | 40 | 0.6981 | 25 | 170 | 17.8024 |
+| 10 | right_ankle_roll | -28 | -0.4887 | 28 | 0.4887 | 25 | 170 | 17.8024 |
+| 11 | left_shoulder_pitch | -210 | -3.6652 | 90 | 1.5708 | 10 | 235 | 24.6091 |
+| 12 | left_shoulder_roll | -10 | -0.1745 | 180 | 3.1416 | 10 | 235 | 24.6091 |
+| 13 | left_shoulder_yaw | -90 | -1.5708 | 90 | 1.5708 | 10 | 235 | 24.6091 |
+| 14 | left_elbow_pitch | -45 | -0.7854 | 225 | 3.927 | 10 | 235 | 24.6091 |
+| 15 | left_hip_pitch | -160 | -2.7925 | 160 | 2.7925 | 55 | 180 | 18.8496 |
+| 16 | left_hip_roll | -90 | -1.5708 | 80 | 1.3963 | 25 | 170 | 17.8024 |
+| 17 | left_hip_yaw | -160 | -2.7925 | 160 | 2.7925 | 25 | 170 | 17.8024 |
+| 18 | left_knee_pitch | -100 | -1.7453 | 120 | 2.0944 | 55 | 180 | 18.8496 |
+| 19 | left_ankle_pitch | -40 | -0.6981 | 40 | 0.6981 | 25 | 170 | 17.8024 |
+| 20 | left_ankle_roll | -28 | -0.4887 | 28 | 0.4887 | 25 | 170 | 17.8024 |
+| 21 | waist_yaw | -155 | -2.7053 | 155 | 2.7053 | 25 | 170 | 17.8024 |
 
 ---
 
@@ -157,12 +179,6 @@ Two compute domains share the body:
 
 MCU and SoC exchange data over dual **RGMII** links. Battery power goes through a **12 V buck**; the MCU rail set is 12 V / 5 V / 3.3 V; the SoC path is 12 V → buck +4 V → PMIC RK806 plus discrete regulators.
 
-**Software system architecture** (Feishu 2.2 item 2) is still a placeholder in the source document.
-
-Coming soon. Expected update in September.
-
-Battery capacity, runtime, and the onboard real-time bus type (Feishu 3.5 / related notes) are also not specified in the source yet.
-
 ---
 
 ## Bill of materials
@@ -179,10 +195,8 @@ Coming soon. Expected update in September.
 
 ## Known limits
 
-From the open-source prep doc (sections 2.2, 2.4, 3.1, 4.1, 5.x):
-
 - Current sensing is IMU plus motor-internal feedback. LiDAR and cameras are not fitted; hardware interfaces are reserved.
-- Chest shell is soft TPU; collision energy is lower than a hard enclosure, but this is still a high-dynamic ~10 kg machine.
+- Collision energy is lower than a hard enclosure, but this is still a high-dynamic ~10 kg machine.
 - Arm reach is short (30–40 cm). Not intended for fine work at adult kitchen-counter height.
 - Printable STL, BOM, fasteners, and assembly steps are not published in this revision.
 
