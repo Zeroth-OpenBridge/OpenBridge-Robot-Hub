@@ -10,7 +10,8 @@ OpenBridge is the open-source ecosystem. Zeroth Bridge is the robot.
 | Skill development | [Skill Hub](https://github.com/Zeroth-OpenBridge/OpenBridge-Skill-Hub) |
 | Simulation and verification | [Simulation Hub](https://github.com/Zeroth-OpenBridge/OpenBridge-Simulation-Hub) |
 
-Document version: V1.0.2  
+Document version: V1.1.0  
+Hardware snapshot: **2026-09-02** (`mechanical/20260902/`)  
 Applicable model: 小桥 / Zeroth Bridge  
 Units: SI (cm, kg, N·m)  
 License: [GNU General Public License v3.0](LICENSE) — 元点机器人 / OpenBridge
@@ -21,11 +22,11 @@ License: [GNU General Public License v3.0](LICENSE) — 元点机器人 / OpenBr
 
 1. [Repository layout](#repository-layout)
 2. [Print quickstart](#print-quickstart)
-3. [Mechanical structure](#mechanical-structure)
-4. [Specifications](#specifications)
-5. [Degrees of freedom](#degrees-of-freedom)
-6. [Electrical topology](#electrical-topology)
-7. [Bill of materials](#bill-of-materials)
+3. [Parts snapshot 2026-09-02](#parts-snapshot-2026-09-02)
+4. [Mechanical structure](#mechanical-structure)
+5. [Specifications](#specifications)
+6. [Degrees of freedom](#degrees-of-freedom)
+7. [Electrical topology](#electrical-topology)
 8. [Assembly](#assembly)
 9. [Known limits](#known-limits)
 10. [Issues and pull requests](#issues-and-pull-requests)
@@ -44,34 +45,81 @@ OpenBridge-Robot-Hub/
 │   ├── 2.2-electrical-topology.png
 │   ├── 4.1-structure.png        body structure diagram
 │   └── 4.1-joints.png           joint index / motor layout
-├── mechanical/                  CAD, structure docs, future STL / STEP
+├── mechanical/
+│   └── 20260902/                hardware snapshot 2026-09-02
+│       ├── VERSION
+│       ├── head/
+│       ├── torso/
+│       ├── waist/
+│       ├── left_arm/
+│       ├── right_arm/
+│       ├── left_leg/
+│       ├── right_leg/
+│       └── foot/
 ├── electrical/                  topology and wiring
 │   └── electrical-topology.pdf  source diagram from the open-source prep doc
-├── bom/                         bill of materials
 └── assembly/                    assembly and fastener notes
 ```
 
-CAD, STL, and other large binaries (when published) are tracked with Git LFS. Files larger than 100 MB go to [GitHub Releases](../../releases).
+Printable STL files in this snapshot are regular Git files. The full-body STEP assembly is larger than GitHub’s 100 MB file limit and is published on [Releases](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases).
 
 | Path | Status | What belongs here |
 | --- | --- | --- |
-| `mechanical/` | Placeholder | Structure CAD, enclosure parts, printable STL (structure / enclosure / optional) |
+| `mechanical/20260902/` | Published | Printable STL by body region and structural members (snapshot 2026-09-02) |
 | `electrical/` | Topology PDF published | Electrical topology and later wiring / pinout notes |
-| `bom/` | Placeholder | Part list mapped to filenames |
 | `assembly/` | Placeholder | Assembly sequence and fasteners |
 | `images/` | Published | Figures used by this README |
 
-STL files are not in the tree yet. A filename ↔ part table will be added when `mechanical/` is populated.
-
-Coming soon. Expected update in September.
+Later hardware drops use a new dated folder (`mechanical/YYYYMMDD/`) so snapshots stay side by side.
 
 ---
 
 ## Print quickstart
 
-The chest shell is soft **TPU**. Print profiles, slicer settings, and part files are not in this repository yet.
+Current parts: [`mechanical/20260902/`](mechanical/20260902/). Left / right parts use `_L` / `_R`. Files named `structure_*` are structural members (series **1** foot, **2** shank, **3** thigh, **4–5** waist, **6** arm).
+
+Print **TPU** for:
+
+- Chest enclosure — `torso/body_front_shell.stl`, `torso/body_rear_shell.stl` (soft chest shell)
+- `head/neck_tpu.stl`
+- `torso/logo_tpu.stl`
+- `foot/foot_sole_tpu.stl`
+
+Slicer profiles and remaining material assignments are not in this revision.
 
 Coming soon. Expected update in September.
+
+---
+
+## Parts snapshot 2026-09-02
+
+Full-body STEP (134 MB): [Zeroth_Bridge_assembly_20260902.step](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases) on Releases.
+
+| Region | Path | Files |
+| --- | ---: | --- |
+| Head | [`head/`](mechanical/20260902/head/) | 9 STL |
+| Torso | [`torso/`](mechanical/20260902/torso/) | 18 STL |
+| Waist | [`waist/`](mechanical/20260902/waist/) | 11 STL |
+| Left arm | [`left_arm/`](mechanical/20260902/left_arm/) | 17 STL |
+| Right arm | [`right_arm/`](mechanical/20260902/right_arm/) | 18 STL |
+| Left leg | [`left_leg/`](mechanical/20260902/left_leg/) | 24 STL + 1 PRT |
+| Right leg | [`right_leg/`](mechanical/20260902/right_leg/) | 21 STL |
+| Foot | [`foot/`](mechanical/20260902/foot/) | 9 STL |
+| Assembly | [Releases](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases) | 1 STEP |
+
+| Region | Path | Files |
+| --- | ---: | --- |
+| Head | [`head/`](mechanical/20260902/head/) | 9 STL |
+| Torso | [`torso/`](mechanical/20260902/torso/) | 18 STL |
+| Waist | [`waist/`](mechanical/20260902/waist/) | 11 STL |
+| Left arm | [`left_arm/`](mechanical/20260902/left_arm/) | 17 STL |
+| Right arm | [`right_arm/`](mechanical/20260902/right_arm/) | 18 STL |
+| Left leg | [`left_leg/`](mechanical/20260902/left_leg/) | 24 STL + 1 PRT |
+| Right leg | [`right_leg/`](mechanical/20260902/right_leg/) | 21 STL |
+| Foot | [`foot/`](mechanical/20260902/foot/) | 9 STL |
+| Assembly | STEP at snapshot root | 1 STEP |
+
+Filenames match the part names (English). `_L` / `_R` is side. Browse each folder for the full list.
 
 ---
 
@@ -181,12 +229,6 @@ MCU and SoC exchange data over dual **RGMII** links. Battery power goes through 
 
 ---
 
-## Bill of materials
-
-Coming soon. Expected update in September.
-
----
-
 ## Assembly
 
 Coming soon. Expected update in September.
@@ -198,7 +240,7 @@ Coming soon. Expected update in September.
 - Current sensing is IMU plus motor-internal feedback. LiDAR and cameras are not fitted; hardware interfaces are reserved.
 - Collision energy is lower than a hard enclosure, but this is still a high-dynamic ~10 kg machine.
 - Arm reach is short (30–40 cm). Not intended for fine work at adult kitchen-counter height.
-- Printable STL, BOM, fasteners, and assembly steps are not published in this revision.
+- Fasteners and assembly steps are not published in this revision. Printable STL and the STEP assembly are in `mechanical/20260902/`.
 
 If you build or modify a complete robot yourself, assess close-to-people use and high-dynamic motion risk on your own.
 

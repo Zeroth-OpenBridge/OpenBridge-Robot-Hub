@@ -1,5 +1,10 @@
 # Changelog
 
+## [V1.1.0]
+
+- Author: OpenBridge Official
+- Changes: Publish hardware snapshot 2026-09-02 (printable STL by body region); STEP assembly on GitHub Releases; remove unused BOM folder
+
 ## [V1.0.2]
 
 - Author: OpenBridge Official
