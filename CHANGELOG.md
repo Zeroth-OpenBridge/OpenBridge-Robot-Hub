@@ -1,5 +1,10 @@
 # Changelog
 
+## [V1.1.1]
+
+- Author: OpenBridge Official
+- Changes: Add zipped STEP assembly to mechanical/20260902
+
 ## [V1.1.0]
 
 - Author: OpenBridge Official

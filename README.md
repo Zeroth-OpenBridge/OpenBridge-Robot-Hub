@@ -10,7 +10,7 @@ OpenBridge is the open-source ecosystem. Zeroth Bridge is the robot.
 | Skill development | [Skill Hub](https://github.com/Zeroth-OpenBridge/OpenBridge-Skill-Hub) |
 | Simulation and verification | [Simulation Hub](https://github.com/Zeroth-OpenBridge/OpenBridge-Simulation-Hub) |
 
-Document version: V1.1.0  
+Document version: V1.1.1  
 Hardware snapshot: **2026-09-02** (`mechanical/20260902/`)  
 Applicable model: 小桥 / Zeroth Bridge  
 Units: SI (cm, kg, N·m)  
@@ -48,6 +48,7 @@ OpenBridge-Robot-Hub/
 ├── mechanical/
 │   └── 20260902/                hardware snapshot 2026-09-02
 │       ├── VERSION
+│       ├── Zeroth_Bridge_assembly_20260902.step.zip
 │       ├── head/
 │       ├── torso/
 │       ├── waist/
@@ -61,11 +62,11 @@ OpenBridge-Robot-Hub/
 └── assembly/                    assembly and fastener notes
 ```
 
-Printable STL files in this snapshot are regular Git files. The full-body STEP assembly is larger than GitHub’s 100 MB file limit and is published on [Releases](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases).
+Printable STL files and the zipped STEP assembly in this snapshot are regular Git files. The uncompressed STEP (about 134 MB) is on [Releases](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases).
 
 | Path | Status | What belongs here |
 | --- | --- | --- |
-| `mechanical/20260902/` | Published | Printable STL by body region and structural members (snapshot 2026-09-02) |
+| `mechanical/20260902/` | Published | Printable STL by body region, structural members, and zipped STEP assembly (snapshot 2026-09-02) |
 | `electrical/` | Topology PDF published | Electrical topology and later wiring / pinout notes |
 | `assembly/` | Placeholder | Assembly sequence and fasteners |
 | `images/` | Published | Figures used by this README |
@@ -93,7 +94,7 @@ Coming soon. Expected update in September.
 
 ## Parts snapshot 2026-09-02
 
-Full-body STEP (134 MB): [Zeroth_Bridge_assembly_20260902.step](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases) on Releases.
+Full-body STEP (zipped, about 28 MB): [`Zeroth_Bridge_assembly_20260902.step.zip`](mechanical/20260902/Zeroth_Bridge_assembly_20260902.step.zip). Uncompressed STEP (134 MB): [Releases](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases/tag/hardware-2026.09.02).
 
 | Region | Path | Files |
 | --- | ---: | --- |
@@ -105,19 +106,7 @@ Full-body STEP (134 MB): [Zeroth_Bridge_assembly_20260902.step](https://github.c
 | Left leg | [`left_leg/`](mechanical/20260902/left_leg/) | 24 STL + 1 PRT |
 | Right leg | [`right_leg/`](mechanical/20260902/right_leg/) | 21 STL |
 | Foot | [`foot/`](mechanical/20260902/foot/) | 9 STL |
-| Assembly | [Releases](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases) | 1 STEP |
-
-| Region | Path | Files |
-| --- | ---: | --- |
-| Head | [`head/`](mechanical/20260902/head/) | 9 STL |
-| Torso | [`torso/`](mechanical/20260902/torso/) | 18 STL |
-| Waist | [`waist/`](mechanical/20260902/waist/) | 11 STL |
-| Left arm | [`left_arm/`](mechanical/20260902/left_arm/) | 17 STL |
-| Right arm | [`right_arm/`](mechanical/20260902/right_arm/) | 18 STL |
-| Left leg | [`left_leg/`](mechanical/20260902/left_leg/) | 24 STL + 1 PRT |
-| Right leg | [`right_leg/`](mechanical/20260902/right_leg/) | 21 STL |
-| Foot | [`foot/`](mechanical/20260902/foot/) | 9 STL |
-| Assembly | STEP at snapshot root | 1 STEP |
+| Assembly | [`Zeroth_Bridge_assembly_20260902.step.zip`](mechanical/20260902/Zeroth_Bridge_assembly_20260902.step.zip) | 1 ZIP |
 
 Filenames match the part names (English). `_L` / `_R` is side. Browse each folder for the full list.
 
