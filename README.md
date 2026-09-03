@@ -195,7 +195,7 @@ Orange tags **1–21** index joints: **1–4 right arm, 5–10 right leg, 11–1
 
 ## Electrical topology
 
-Original file: [`electrical/electrical-topology.pdf`](electrical/electrical-topology.pdf). On-diagram labels mix English part names and Chinese limb names; the figure is unchanged.
+Original file: [`electrical/electrical-topology.pdf`](electrical/electrical-topology.pdf). 
 
 <p align="center">
   <img src="images/2.2-electrical-topology.png" alt="Zeroth Bridge electrical topology" width="520" />
