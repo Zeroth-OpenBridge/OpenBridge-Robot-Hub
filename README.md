@@ -1,6 +1,6 @@
 # Robot Hub
 
-Hardware boundary for **Zeroth Bridge** (小桥): drawings, electrical topology, enclosure / interface notes, and (when uploaded) printable parts.
+Hardware boundary for **Zeroth Bridge** (小桥): drawings, electrical topology, enclosure / interface notes, and printable parts.
 
 OpenBridge is the open-source ecosystem. Zeroth Bridge is the robot.
 
@@ -62,8 +62,6 @@ OpenBridge-Robot-Hub/
 └── assembly/                    assembly and fastener notes
 ```
 
-Printable STL files and the zipped STEP assembly in this snapshot are regular Git files. The uncompressed STEP (about 134 MB) is on [Releases](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases).
-
 | Path | Status | What belongs here |
 | --- | --- | --- |
 | `mechanical/20260902/` | Published | Printable STL by body region, structural members, and zipped STEP assembly (snapshot 2026-09-02) |
@@ -114,8 +112,6 @@ Filenames match the part names (English). `_L` / `_R` is side. Browse each folde
 
 ## Mechanical structure
 
-Source: Feishu open-source prep doc, section **4.1 Mechanical overall structure**.
-
 Zeroth Bridge is a compact humanoid with a slender body. Key dimensions and mass follow the [specification table](#specifications) (85 cm / about 10 kg). The chest shell is soft TPU.
 
 **Body structure diagram**
@@ -124,7 +120,7 @@ Zeroth Bridge is a compact humanoid with a slender body. Key dimensions and mass
   <img src="images/4.1-structure.png" alt="Zeroth Bridge body structure" width="640" />
 </p>
 
-English callouts on the cutaway:
+Callouts on the cutaway:
 
 - **10 N·m motor** (green) — shoulders and arms
 - **SOC** — upper chest, below the neck
@@ -169,8 +165,6 @@ Orange tags **1–21** index joints: **1–4 right arm, 5–10 right leg, 11–1
 
 ## Specifications
 
-Source: Feishu section **3.1**, which section 4.1 cites for overall size and mass.
-
 | Key spec | Value | Notes |
 | --- | --- | --- |
 | Overall height | 85 cm | ~80 cm-class small humanoid; suited to demonstrations, education, teleoperation, and small-object interaction |
@@ -184,8 +178,6 @@ Source: Feishu section **3.1**, which section 4.1 cites for overall size and mas
 ---
 
 ## Degrees of freedom
-
-Source: Feishu section **3.2**, used with the 4.1 joint diagram.
 
 | Body region | Joint | DoF | Peak torque |
 | --- | --- | --- | --- |
@@ -203,7 +195,7 @@ Source: Feishu section **3.2**, used with the 4.1 joint diagram.
 
 ## Electrical topology
 
-Source: Feishu section **2.2 System composition and architecture**, item 1 (electrical topology). Original file: [`electrical/electrical-topology.pdf`](electrical/electrical-topology.pdf). On-diagram labels mix English part names and Chinese limb names; the figure is unchanged.
+Original file: [`electrical/electrical-topology.pdf`](electrical/electrical-topology.pdf). On-diagram labels mix English part names and Chinese limb names; the figure is unchanged.
 
 <p align="center">
   <img src="images/2.2-electrical-topology.png" alt="Zeroth Bridge electrical topology" width="520" />
