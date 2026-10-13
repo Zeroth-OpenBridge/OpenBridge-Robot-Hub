@@ -10,8 +10,8 @@ OpenBridge is the open-source ecosystem. Zeroth Bridge is the robot.
 | Skill development | [Skill Hub](https://github.com/Zeroth-OpenBridge/OpenBridge-Skill-Hub) |
 | Simulation and verification | [Simulation Hub](https://github.com/Zeroth-OpenBridge/OpenBridge-Simulation-Hub) |
 
-Document version: V1.1.1  
-Hardware snapshot: **2026-09-02** (`mechanical/20260902/`)  
+Document version: V1.2.0  
+Hardware snapshot: **2026-10-12** (`mechanical/20261012/`)  
 Applicable model: 小桥 / Zeroth Bridge  
 Units: SI (cm, kg, N·m)  
 License: [GNU General Public License v3.0](LICENSE) — 元点机器人 / OpenBridge
@@ -22,7 +22,7 @@ License: [GNU General Public License v3.0](LICENSE) — 元点机器人 / OpenBr
 
 1. [Repository layout](#repository-layout)
 2. [Print quickstart](#print-quickstart)
-3. [Parts snapshot 2026-09-02](#parts-snapshot-2026-09-02)
+3. [Parts snapshot 2026-10-12](#parts-snapshot-2026-10-12)
 4. [Mechanical structure](#mechanical-structure)
 5. [Specifications](#specifications)
 6. [Degrees of freedom](#degrees-of-freedom)
@@ -46,67 +46,44 @@ OpenBridge-Robot-Hub/
 │   ├── 4.1-structure.png        body structure diagram
 │   └── 4.1-joints.png           joint index / motor layout
 ├── mechanical/
-│   └── 20260902/                hardware snapshot 2026-09-02
+│   └── 20261012/                hardware snapshot 2026-10-12
 │       ├── VERSION
-│       ├── Zeroth_Bridge_assembly_20260902.step.zip
-│       ├── head/
-│       ├── torso/
-│       ├── waist/
-│       ├── left_arm/
-│       ├── right_arm/
-│       ├── left_leg/
-│       ├── right_leg/
-│       └── foot/
+│       ├── *.prt / *.asm        native CAD (Creo / ProE)
+│       └── (STEP on Releases)
 ├── electrical/                  topology and wiring
 │   └── electrical-topology.pdf  source diagram from the open-source prep doc
 └── assembly/                    assembly and fastener notes
 ```
 
+This snapshot is native CAD (`.prt` / `.asm`). Files over 100 MB (the full-body STEP) are on [Releases](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases).
 | Path | Status | What belongs here |
 | --- | --- | --- |
-| `mechanical/20260902/` | Published | Printable STL by body region, structural members, and zipped STEP assembly (snapshot 2026-09-02) |
+| `mechanical/20261012/` | Published | Native CAD source for snapshot 2026-10-12 (replaces 2026-09-02) |
 | `electrical/` | Topology PDF published | Electrical topology and later wiring / pinout notes |
 | `assembly/` | Placeholder | Assembly sequence and fasteners |
 | `images/` | Published | Figures used by this README |
-
-Later hardware drops use a new dated folder (`mechanical/YYYYMMDD/`) so snapshots stay side by side.
 
 ---
 
 ## Print quickstart
 
-Current parts: [`mechanical/20260902/`](mechanical/20260902/). Left / right parts use `_L` / `_R`. Files named `structure_*` are structural members (series **1** foot, **2** shank, **3** thigh, **4–5** waist, **6** arm).
+Current CAD: [`mechanical/20261012/`](mechanical/20261012/). This revision is native Creo/ProE source (`.prt` / `.asm`), not printable STL. Filenames are as exported.
 
-Print **TPU** for:
+The chest shell is soft **TPU**. Slicer profiles and STL exports are not in this revision.
 
-- Chest enclosure — `torso/body_front_shell.stl`, `torso/body_rear_shell.stl` (soft chest shell)
-- `head/neck_tpu.stl`
-- `torso/logo_tpu.stl`
-- `foot/foot_sole_tpu.stl`
-
-Slicer profiles and remaining material assignments are not in this revision.
-
-Coming soon. Expected update in September.
+Coming soon. Expected update in a later snapshot.
 
 ---
 
-## Parts snapshot 2026-09-02
+## Parts snapshot 2026-10-12
 
-Full-body STEP (zipped, about 28 MB): [`Zeroth_Bridge_assembly_20260902.step.zip`](mechanical/20260902/Zeroth_Bridge_assembly_20260902.step.zip). Uncompressed STEP (134 MB): [Releases](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases/tag/hardware-2026.09.02).
+Browse [`mechanical/20261012/`](mechanical/20261012/). Full-body STEP (`mini_3_0.stp`, about 160 MB): [Releases / hardware-2026.10.12](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases/tag/hardware-2026.10.12).
 
-| Region | Path | Files |
+| Kind | Count | Notes |
 | --- | ---: | --- |
-| Head | [`head/`](mechanical/20260902/head/) | 9 STL |
-| Torso | [`torso/`](mechanical/20260902/torso/) | 18 STL |
-| Waist | [`waist/`](mechanical/20260902/waist/) | 11 STL |
-| Left arm | [`left_arm/`](mechanical/20260902/left_arm/) | 17 STL |
-| Right arm | [`right_arm/`](mechanical/20260902/right_arm/) | 18 STL |
-| Left leg | [`left_leg/`](mechanical/20260902/left_leg/) | 24 STL + 1 PRT |
-| Right leg | [`right_leg/`](mechanical/20260902/right_leg/) | 21 STL |
-| Foot | [`foot/`](mechanical/20260902/foot/) | 9 STL |
-| Assembly | [`Zeroth_Bridge_assembly_20260902.step.zip`](mechanical/20260902/Zeroth_Bridge_assembly_20260902.step.zip) | 1 ZIP |
-
-Filenames match the part names (English). `_L` / `_R` is side. Browse each folder for the full list.
+| Part (`.prt`) | 407 | Native CAD parts, original names |
+| Assembly (`.asm`) | 111 | Native CAD assemblies, original names |
+| STEP | 1 | On Releases (`mini_3_0.stp`) |
 
 ---
 
@@ -221,7 +198,7 @@ Coming soon. Expected update in September.
 - Current sensing is IMU plus motor-internal feedback. LiDAR and cameras are not fitted; hardware interfaces are reserved.
 - Collision energy is lower than a hard enclosure, but this is still a high-dynamic ~10 kg machine.
 - Arm reach is short (30–40 cm). Not intended for fine work at adult kitchen-counter height.
-- Fasteners and assembly steps are not published in this revision. Printable STL and the STEP assembly are in `mechanical/20260902/`.
+- Fasteners, assembly steps, and printable STL are not in this revision. Native CAD is in `mechanical/20261012/`; the STEP assembly is on Releases.
 
 If you build or modify a complete robot yourself, assess close-to-people use and high-dynamic motion risk on your own.
 

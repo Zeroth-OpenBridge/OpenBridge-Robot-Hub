@@ -15,3 +15,5 @@ dist/
 *.tmp
 *.bak
 ~$*
+*.stp
+*.stp.zip

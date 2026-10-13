@@ -1,5 +1,10 @@
 # Changelog
 
+## [V1.2.0]
+
+- Author: OpenBridge Official
+- Changes: Replace hardware snapshot 2026-09-02 with 2026-10-12 (native CAD .prt/.asm). Full-body STEP assembly is on GitHub Releases.
+
 ## [V1.1.1]
 
 - Author: OpenBridge Official
