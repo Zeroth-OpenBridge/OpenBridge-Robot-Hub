@@ -1,5 +1,10 @@
 # Changelog
 
+## [V1.2.1]
+
+- Author: OpenBridge Official
+- Changes: Add the STEP assembly download link under Assembly
+
 ## [V1.2.0]
 
 - Author: OpenBridge Official

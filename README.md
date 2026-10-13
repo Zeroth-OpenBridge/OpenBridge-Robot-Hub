@@ -10,7 +10,7 @@ OpenBridge is the open-source ecosystem. Zeroth Bridge is the robot.
 | Skill development | [Skill Hub](https://github.com/Zeroth-OpenBridge/OpenBridge-Skill-Hub) |
 | Simulation and verification | [Simulation Hub](https://github.com/Zeroth-OpenBridge/OpenBridge-Simulation-Hub) |
 
-Document version: V1.2.0  
+Document version: V1.2.1  
 Hardware snapshot: **2026-10-12** (`mechanical/20261012/`)  
 Applicable model: 小桥 / Zeroth Bridge  
 Units: SI (cm, kg, N·m)  
@@ -60,7 +60,7 @@ This snapshot is native CAD (`.prt` / `.asm`). Files over 100 MB (the full-body 
 | --- | --- | --- |
 | `mechanical/20261012/` | Published | Native CAD source for snapshot 2026-10-12 (replaces 2026-09-02) |
 | `electrical/` | Topology PDF published | Electrical topology and later wiring / pinout notes |
-| `assembly/` | Placeholder | Assembly sequence and fasteners |
+| `assembly/` | STEP published | Full-body STEP on Releases; sequence and fasteners still TBD |
 | `images/` | Published | Figures used by this README |
 
 ---
@@ -189,7 +189,9 @@ MCU and SoC exchange data over dual **RGMII** links. Battery power goes through 
 
 ## Assembly
 
-Coming soon. Expected update in September.
+Full-body STEP assembly (snapshot 2026-10-12): [`mini_3_0.stp`](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases/download/hardware-2026.10.12/mini_3_0.stp) on [Releases](https://github.com/Zeroth-OpenBridge/OpenBridge-Robot-Hub/releases/tag/hardware-2026.10.12). Native CAD (`.prt` / `.asm`) is in [`mechanical/20261012/`](mechanical/20261012/).
+
+Assembly sequence and fasteners are not in this revision.
 
 ---
 
